@@ -132,13 +132,14 @@
       </div>
     </main>
     <script type="module" src="script.js"></script>
-    <script>
+  <script>
   document.addEventListener("DOMContentLoaded", () => {
     const params = new URLSearchParams(window.location.search);
-    const guestName = params.get("name") || "Guest"; 
+    const guestName = params.get("name") || "Guest"; // fallback "Guest"
     document.getElementById("guest-name").textContent = guestName;
   });
 </script>
+
 
   </body>
 </html>
