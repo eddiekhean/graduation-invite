@@ -132,5 +132,13 @@
       </div>
     </main>
     <script type="module" src="script.js"></script>
+    <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const params = new URLSearchParams(window.location.search);
+    const guestName = params.get("name") || "Guest"; 
+    document.getElementById("guest-name").textContent = guestName;
+  });
+</script>
+
   </body>
 </html>
