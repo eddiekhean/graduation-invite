@@ -1,0 +1,287 @@
+:root {
+  --fg: #fff;
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.35);
+  --glass-inner: rgba(255, 255, 255, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+.liquid-text {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 6vw, 60px);
+  font-weight: 600; /* 400–700 đều đẹp */
+  line-height: 1.2;
+  color: #000000; /* hoặc gradient nếu muốn nổi */
+  text-align: center;
+  margin: 0;
+}
+.plain-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(16px, 3.5vw, 24px);
+  margin: 8px 0 0;
+  text-align: center;
+  font-weight: 300;
+  color: #000000; /* chữ trắng */
+}
+liquid-glass-card {
+  display: block;
+  width: 100%; /* chiếm đúng grid cell */
+  max-width: 100%; /* không bị tràn */
+  box-sizing: border-box;
+}
+
+liquid-glass-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  font-weight: 200;
+  line-height: 1.6; /* hoặc 160% */
+  margin: 0;
+  color: #000000; /* chữ trắng */
+}
+liquid-glass-card h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 50px;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+  line-height: 1.6; /* hoặc 160% */
+  color: #000;
+}
+h4 .sub {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  margin-left: 12px; /* tạo khoảng cách */
+  color: #000000;
+}
+liquid-glass-card p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  color: #000000; /* chữ trắng */
+  margin: 8px 0 0;
+  line-height: 1.6; /* hoặc 160% */
+  font-weight: 300;
+}
+
+body {
+  margin: 0;
+  color: var(--fg);
+  font-family:
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+
+/* ===== NỀN ===== */
+.bg {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: -2;
+  background: #000;
+}
+.bg iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120vw;
+  height: 67.5vw;
+  min-width: 210vh;
+  min-height: 120vh;
+  transform: translate(-50%, -45%);
+  border: 0;
+  pointer-events: none;
+}
+
+.scrim {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.28));
+}
+
+/* ===== NỘI DUNG ===== */
+.page {
+  min-height: auto; /* bỏ ép full screen */
+  display: block; /* bỏ flex center */
+}
+
+/* ==== GRID CHÍNH ==== */
+.layout {
+  --gap: 20px;
+  width: min(1200px, 94vw);
+  margin: 48px auto 40px;
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: 1fr; /* Mobile mặc định: 1 cột */
+  grid-template-areas:
+    'hero'
+    'left'
+    'side'
+    'footer';
+}
+
+/* Hero section */
+.hero {
+  grid-area: hero;
+  min-height: clamp(160px, 20vh, 300px); /* responsive hơn */
+}
+
+/* Left content */
+.left-big {
+  grid-area: left;
+  min-height: 50vh;
+  border-radius: 20px;
+  overflow: visible;
+}
+
+/* Sidebar */
+.sidebar {
+  grid-area: side;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: stretch; /* cho card full ngang trong cột */
+}
+
+.sidebar > liquid-glass-card {
+  width: 100%; /* full width theo cột 30% */
+  max-width: 100%; /* tránh tràn */
+}
+
+/* Footer */
+.footer {
+  grid-area: footer;
+  border-radius: 20px;
+  overflow: visible;
+}
+
+/* Tablet/Desktop >= 768px */
+@media (min-width: 768px) {
+  .layout {
+    grid-template-columns: 7fr 3fr;
+    grid-template-areas:
+      'hero hero'
+      'left side'
+      'footer footer';
+    gap: 24px; /* đây mới là khoảng cách đúng */
+  }
+}
+
+/* Desktop rộng >= 1200px */
+@media (min-width: 1200px) {
+  .layout {
+    --gap: 24px;
+    grid-template-columns: 1fr 360px; /* Sidebar fix width */
+  }
+}
+
+/* Mobile padding nhỏ hơn */
+@media (max-width: 480px) {
+  .layout {
+    width: min(100%, 100vw - 16px);
+  }
+}
+
+.btn {
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+  border-radius: 14px;
+  font-weight: 600;
+  color: #0b0b0b;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+}
+.btn.ghost {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(8px);
+}
+
+/* fallback */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass-card {
+    background: rgba(20, 20, 20, 0.6);
+  }
+  .btn.ghost {
+    background: rgba(255, 255, 255, 0.18);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg iframe {
+    display: none;
+  }
+  .bg {
+    background: #000 url('https://i.ytimg.com/vi/wyxxPTFfdi8/maxresdefault.jpg') center/cover
+      no-repeat;
+  }
+  .glass-card,
+  .btn {
+    transition: none;
+  }
+}
+#confetti-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  pointer-events: none; /* không che click layout */
+}
+
+.confetti-btn {
+  position: fixed;
+  top: 20px;
+  font-size: 32px;
+  cursor: pointer;
+  z-index: 10000;
+  user-select: none;
+  transition: transform 0.2s ease;
+}
+.confetti-btn:hover {
+  transform: scale(1.2);
+}
+.confetti-btn.left {
+  left: 20px;
+}
+.confetti-btn.right {
+  right: 20px;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+}
+liquid-glass-card p,
+liquid-glass-card h1,
+liquid-glass-card h2,
+liquid-glass-card h3,
+liquid-glass-card h4 {
+  word-wrap: break-word; /* xuống dòng khi dài */
+  overflow-wrap: anywhere; /* cho chắc trên mobile */
+  white-space: normal; /* không bị giữ 1 dòng */
+}
