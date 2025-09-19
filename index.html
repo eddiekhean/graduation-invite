@@ -75,6 +75,10 @@
             <liquid-glass-card class="left-big">
             <h3>Invitation</h3>
                <p>Dear <span id="guest-name">Guest</span>,</p>
+<script defer>
+  const params = new URLSearchParams(window.location.search);
+  document.getElementById("guest-name").textContent = params.get("name") || "Guest";
+</script>
 
 <p>
   Today marks not only the end of a journey filled with sleepless nights, laughter, struggles, and growth, 
@@ -132,14 +136,5 @@
       </div>
     </main>
     <script type="module" src="script.js"></script>
-  <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const params = new URLSearchParams(window.location.search);
-    const guestName = params.get("name") || "Guest"; // fallback "Guest"
-    document.getElementById("guest-name").textContent = guestName;
-  });
-</script>
-
-
   </body>
 </html>
