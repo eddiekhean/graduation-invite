@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <title>Thiệp Mời Tốt Nghiệp</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  </head>
+
+  <!-- Canvas confetti -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Script confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script>
+    const canvas = document.getElementById('confetti-canvas');
+    const myConfetti = confetti.create(canvas, { resize: true, useWorker: true });
+
+    function fireConfetti(x = 0.5, y = 0.5) {
+      myConfetti({
+        particleCount: 200,
+        spread: 180,
+        startVelocity: 60,
+        origin: { x, y }
+      });
+    }
+
+    // bắn liên tục 10 giây khi load
+    window.addEventListener("DOMContentLoaded", () => {
+      const interval = setInterval(() => fireConfetti(0.5, 0.1), 500);
+      setTimeout(() => clearInterval(interval), 10000);
+    });
+
+    // bấm bất kỳ đâu cũng bắn
+    document.addEventListener("click", (e) => {
+      const x = e.clientX / window.innerWidth;
+      const y = e.clientY / window.innerHeight;
+      fireConfetti(x, y);
+    });
+  </script>
+
+  <body>
+    <!-- VIDEO NỀN -->
+    <div class="bg" aria-hidden="true">
+      <video autoplay muted loop playsinline>
+        <source src="https://res.cloudinary.com/dpvtwky0z/video/upload/f_auto,q_auto/background_lednlv.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="scrim" aria-hidden="true"></div>
+    <div class="mask-bottom" aria-hidden="true"></div>
+
+    <!-- NỘI DUNG -->
+    <main class="page">
+      <div class="layout">
+        <!-- HERO -->
+        <liquid-glass-card class="hero">
+          <h1 class="liquid-text">Chúc Mừng!</h1>
+          <h4>Lê Duy Khang</h4>
+          <h2 class="plain-text">Cử nhân Công nghệ Thông tin</h2>
+        </liquid-glass-card>
+
+        <!-- KHỐI TRÁI TO -->
+        <liquid-glass-card class="left-big">
+          <h3>Thiệp Mời</h3>
+          <p>Kính gửi <span id="guest-name">Quý khách</span>,</p>
+          <script defer>
+            const params = new URLSearchParams(window.location.search);
+            document.getElementById("guest-name").textContent = params.get("name") || "Quý khách";
+          </script>
+
+          <p>
+            Hôm nay không chỉ đánh dấu sự kết thúc của một chặng đường với bao nỗ lực, khó khăn và niềm vui, 
+            mà còn mở ra một chương mới của cuộc đời. Lễ tốt nghiệp không chỉ là thành quả cá nhân, 
+            mà còn là sự gắn kết từ tình yêu thương, sự ủng hộ và khích lệ của gia đình, thầy cô, 
+            bạn bè đã luôn đồng hành.
+          </p>
+
+          <p>
+            Mỗi thử thách đã rèn cho tôi sự kiên cường, mỗi niềm vui đã tiếp thêm động lực, 
+            và mỗi vấp ngã đã dạy tôi giá trị của sự kiên nhẫn. 
+            Cột mốc này là sự tri ân cho tất cả những ký ức và tình cảm đáng quý.
+          </p>
+
+          <p>
+            Bước sang hành trình mới, tôi mang theo bài học hôm qua với niềm tin và hy vọng cho ngày mai.  
+            Sự hiện diện của Quý vị trong ngày đặc biệt này sẽ là niềm vinh dự và hạnh phúc lớn lao.
+          </p>
+
+          <p>Trân trọng kính mời,</p>
+          <p><i>Duy Khang</i></p>
+        </liquid-glass-card>
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+          <liquid-glass-card>
+            <h3>Thời gian</h3>
+            <p>05 Tháng 10, 2025 – 11 giờ sáng</p>
+          </liquid-glass-card>
+
+          <liquid-glass-card>
+            <h3>Địa điểm</h3>
+            <p>
+              <a href="https://maps.google.com/?q=Đại học Sài Gòn, TP. HCM" target="_blank" rel="noopener noreferrer" class="map-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 6px;">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 
+                  9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 
+                  2.5-2.5 2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+                </svg>
+                Đại học Sài Gòn, TP. HCM
+              </a>
+            </p>
+          </liquid-glass-card>
+
+          <liquid-glass-card>
+            <h3>Lời nhắn</h3>
+            <p>Sự hiện diện của Quý vị là niềm vinh dự và niềm vui lớn lao cho tôi.</p>
+          </liquid-glass-card>
+        </div>
+
+        <!-- FOOTER -->
+        <liquid-glass-card class="footer">
+          <h3>Xin Cảm Ơn</h3>
+          <p><i>"Tương lai thuộc về những ai tin vào vẻ đẹp của ước mơ."</i></p>
+          <p><b>Lê Duy Khang</b></p>
+        </liquid-glass-card>
+      </div>
+    </main>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
