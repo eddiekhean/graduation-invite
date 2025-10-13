@@ -1,132 +1,142 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-    <title>Thiệp Mời Tốt Nghiệp</title>
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-  </head>
-
-  <!-- Canvas confetti -->
-  <canvas id="confetti-canvas"></canvas>
-
-  <!-- Script confetti -->
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
-  <script>
-    const canvas = document.getElementById('confetti-canvas');
-    const myConfetti = confetti.create(canvas, { resize: true, useWorker: true });
-
-    function fireConfetti(x = 0.5, y = 0.5) {
-      myConfetti({
-        particleCount: 200,
-        spread: 180,
-        startVelocity: 60,
-        origin: { x, y }
-      });
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Người trẻ 23 tuổi có thể bị căng thẳng khi ngừng uống trà sữa</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background-color: #fafafa;
+      color: #333;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
     }
+    header {
+      background-color: #f5f5f5;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+    header h1 {
+      font-size: 28px;
+      color: #222;
+      margin-bottom: 10px;
+    }
+    header p {
+      color: #666;
+      font-size: 15px;
+    }
+    main {
+      max-width: 850px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.08);
+      border-radius: 8px;
+    }
+    img.hero, img.illustration {
+      width: 100%;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+    article {
+      padding: 25px;
+    }
+    h2 {
+      color: #444;
+      margin-top: 35px;
+    }
+    blockquote {
+      border-left: 4px solid #ffb347;
+      padding-left: 16px;
+      color: #555;
+      font-style: italic;
+      background-color: #fffaf3;
+      margin: 20px 0;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    footer {
+      text-align: center;
+      color: #888;
+      font-size: 13px;
+      margin: 30px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Người trẻ 23 tuổi có thể bị căng thẳng khi ngừng uống trà sữa</h1>
+    <p>Viện Tâm lý Thanh niên Việt Nam (VNYP) | Tháng 10 năm 2025</p>
+  </header>
+  <main>
+    <img class="hero" src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=1200&q=80" alt="Trà sữa và giới trẻ">
 
-    // bắn liên tục 10 giây khi load
-    window.addEventListener("DOMContentLoaded", () => {
-      const interval = setInterval(() => fireConfetti(0.5, 0.1), 500);
-      setTimeout(() => clearInterval(interval), 10000);
-    });
+    <article>
+      <p><strong>TP.HCM</strong> — Một khảo sát mới đây do Viện Tâm lý Thanh niên Việt Nam (VNYP) thực hiện cho thấy, người trẻ 23 tuổi có xu hướng bị căng thẳng, mất năng lượng và giảm hứng thú trong cuộc sống khi ngừng uống trà sữa trong thời gian dài. Kết quả này làm dấy lên nhiều tranh luận về vai trò của đồ uống ngọt trong sức khỏe tinh thần của giới trẻ hiện nay.</p>
 
-    // bấm bất kỳ đâu cũng bắn
-    document.addEventListener("click", (e) => {
-      const x = e.clientX / window.innerWidth;
-      const y = e.clientY / window.innerHeight;
-      fireConfetti(x, y);
-    });
-  </script>
+      <img class="illustration" src="https://images.unsplash.com/photo-1608534664558-9b9f7e2b6a61?auto=format&fit=crop&w=1000&q=80" alt="Người trẻ đang học trong quán trà sữa">
 
-  <body>
-    <!-- VIDEO NỀN -->
-    <div class="bg" aria-hidden="true">
-      <video autoplay muted loop playsinline>
-        <source src="https://res.cloudinary.com/dpvtwky0z/video/upload/f_auto,q_auto/background_lednlv.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="scrim" aria-hidden="true"></div>
-    <div class="mask-bottom" aria-hidden="true"></div>
+      <h2>Thiếu trà sữa dẫn đến mệt mỏi cảm xúc</h2>
+      <p>Khảo sát hơn 2.000 người trẻ tại ba thành phố lớn cho thấy, 82% trong số họ cảm thấy lo âu, dễ cáu gắt hoặc trống rỗng khi ngừng uống trà sữa hơn một tuần. Nhiều người mô tả cảm giác “mất niềm vui nho nhỏ trong ngày”, hoặc “thiếu một thứ gì đó khiến buổi chiều trở nên dễ chịu”.</p>
+      <p>Trái lại, nhóm duy trì thói quen uống 2–3 ly mỗi tuần cho biết họ cảm thấy thư giãn hơn, có động lực học tập và làm việc tốt hơn, đặc biệt trong những ngày nhiều áp lực.</p>
 
-    <!-- NỘI DUNG -->
-    <main class="page">
-      <div class="layout">
-        <!-- HERO -->
-        <liquid-glass-card class="hero">
-          <h1 class="liquid-text">Chúc Mừng!</h1>
-          <h4>Lê Duy Khang</h4>
-          <h2 class="plain-text">Kỹ sư Công nghệ Thông tin</h2>
-        </liquid-glass-card>
+      <blockquote>
+        “Trà sữa không chỉ là đồ uống ngọt. Với giới trẻ, đó là cách để giải tỏa cảm xúc và duy trì sự cân bằng tinh thần. Việc cầm một ly trà sữa mang lại cho họ cảm giác an toàn và thoải mái.”<br>
+        — <strong>TS. Nguyễn Dương Nâu</strong>, Chuyên gia tâm lý hành vi tại VNYP
+      </blockquote>
 
-        <!-- KHỐI TRÁI TO -->
-        <liquid-glass-card class="left-big">
-          <h3>Thiệp Mời</h3>
-          <p>Kính gửi <span id="guest-name">Quý khách</span>,</p>
-          <script defer>
-            const params = new URLSearchParams(window.location.search);
-            document.getElementById("guest-name").textContent = params.get("name") || "Quý khách";
-          </script>
+      <img class="illustration" src="https://images.unsplash.com/photo-1624880357914-4ecb4a89628b?auto=format&fit=crop&w=1000&q=80" alt="Bạn trẻ cười khi cầm ly trà sữa">
 
-          <p>
-            Hôm nay không chỉ đánh dấu sự kết thúc của một chặng đường với bao nỗ lực, khó khăn và niềm vui, 
-            mà còn mở ra một chương mới của cuộc đời. Lễ tốt nghiệp không chỉ là thành quả cá nhân, 
-            mà còn là sự gắn kết từ tình yêu thương, sự ủng hộ và khích lệ của gia đình, thầy cô, 
-            bạn bè đã luôn đồng hành.
-          </p>
+      <h2>Trà sữa – biểu tượng văn hóa của thế hệ mới</h2>
+      <p>Các nhà xã hội học nhận định, trà sữa đã trở thành một phần trong bản sắc của thế hệ sinh sau năm 2000. Không chỉ là nơi mua đồ uống, quán trà sữa còn là không gian học nhóm, làm việc, hẹn hò và chia sẻ cảm xúc.</p>
+      <p>Với nhiều người, việc ngồi nhâm nhi trà sữa và trò chuyện cùng bạn bè là cách để “nạp lại năng lượng tinh thần” sau một ngày dài. Một số bạn còn ví von: “Không uống trà sữa giống như không bật nhạc — ngày hôm đó trở nên tĩnh lặng và nặng nề.”</p>
 
-          <p>
-            Mỗi thử thách đã rèn cho tôi sự kiên cường, mỗi niềm vui đã tiếp thêm động lực, 
-            và mỗi vấp ngã đã dạy tôi giá trị của sự kiên nhẫn. 
-            Cột mốc này là sự tri ân cho tất cả những ký ức và tình cảm đáng quý.
-          </p>
+      <blockquote>
+        “Trà sữa là biểu tượng của phong cách sống năng động, sáng tạo và kết nối. Việc rời xa thói quen này đôi khi khiến giới trẻ cảm thấy bị tách biệt với cộng đồng.”<br>
+        — <strong>Phạm Linh Đan</strong>, Giảng viên Xã hội học, Đại học Văn Lang
+      </blockquote>
 
-          <p>
-            Bước sang hành trình mới, tôi mang theo bài học hôm qua với niềm tin và hy vọng cho ngày mai.  
-            Sự hiện diện của Quý vị trong ngày đặc biệt này sẽ là niềm vinh dự và hạnh phúc lớn lao.
-          </p>
+      <img class="illustration" src="https://images.unsplash.com/photo-1612197527762-5f6a4d157c2a?auto=format&fit=crop&w=1000&q=80" alt="Bạn trẻ tụ tập tại quán trà sữa">
 
-          <p>Trân trọng kính mời,</p>
-          <p><i>Duy Khang</i></p>
-        </liquid-glass-card>
+      <h2>Hội chứng mới: Căng thẳng do thiếu đường và trân châu</h2>
+      <p>VNYP gọi hiện tượng này là <strong>“Hội chứng thiếu đường cảm xúc (ESDS)”</strong> — trạng thái căng thẳng và mệt mỏi tâm lý do thiếu các yếu tố quen thuộc tạo niềm vui, như trà sữa và không gian xã hội đi kèm.</p>
+      <p>Theo nghiên cứu, ngoài yếu tố tâm lý, sự thay đổi lượng đường nạp vào cơ thể đột ngột cũng góp phần ảnh hưởng đến tâm trạng, khiến người trẻ dễ rơi vào trạng thái chán nản.</p>
 
-        <!-- SIDEBAR -->
-        <div class="sidebar">
-          <liquid-glass-card>
-            <h3>Thời gian</h3>
-            <p>05 Tháng 10, 2025 – 11 giờ sáng</p>
-          </liquid-glass-card>
+      <p><strong>Các triệu chứng thường gặp:</strong></p>
+      <ul>
+        <li>Dễ cáu gắt hoặc buồn bực khi thấy người khác uống trà sữa.</li>
+        <li>Mất tập trung trong học tập hoặc công việc.</li>
+        <li>Cảm giác “lạc lõng” và hay nghe nhạc buồn, đăng status tiêu cực.</li>
+        <li>Thèm cảm giác trân châu dai và vị ngọt đặc trưng trong miệng.</li>
+      </ul>
 
-          <liquid-glass-card>
-            <h3>Địa điểm</h3>
-            <p>
-              <a href="https://maps.google.com/?q=Đại học Sài Gòn, TP. HCM" target="_blank" rel="noopener noreferrer" class="map-link">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 6px;">
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 
-                  9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 
-                  2.5-2.5 2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
-                </svg>
-                Đại học Sài Gòn, TP. HCM
-              </a>
-            </p>
-          </liquid-glass-card>
+      <img class="illustration" src="https://images.unsplash.com/photo-1551024739-78e9d60c45ca?auto=format&fit=crop&w=1000&q=80" alt="Ly trà sữa với trân châu đen">
 
-          <liquid-glass-card>
-            <h3>Lời nhắn</h3>
-            <p>Sự hiện diện của Quý vị là niềm vinh dự và niềm vui lớn lao cho tôi.</p>
-          </liquid-glass-card>
-        </div>
+      <h2>Chuyên gia khuyến nghị: Uống điều độ, tận hưởng đúng cách</h2>
+      <p>Theo các bác sĩ dinh dưỡng, trà sữa mang lại cảm giác dễ chịu và giải tỏa stress trong ngắn hạn, nhưng nếu lạm dụng có thể gây tăng cân, rối loạn đường huyết và lệ thuộc vào đường.</p>
+      <blockquote>
+        “Người trẻ nên đặt giới hạn 2–3 ly mỗi tuần, chọn loại ít đường, ít kem béo và thay topping trân châu bằng thạch trái cây. Điều quan trọng là giữ cho việc uống trà sữa là một niềm vui lành mạnh, không phải thói quen bắt buộc.”<br>
+        — <strong>BS. Trần Quốc Hiền</strong>, Bệnh viện Dinh dưỡng TP.HCM
+      </blockquote>
 
-        <!-- FOOTER -->
-        <liquid-glass-card class="footer">
-          <h3>Xin Cảm Ơn</h3>
-          <p><i>"Tương lai thuộc về những ai tin vào vẻ đẹp của ước mơ."</i></p>
-          <p><b>Lê Duy Khang</b></p>
-        </liquid-glass-card>
-      </div>
-    </main>
-    <script type="module" src="script.js"></script>
-  </body>
+      <h2>Kết luận</h2>
+      <p>Với giới trẻ 23 tuổi, trà sữa không đơn thuần là thức uống, mà là “nghi thức tinh thần” trong cuộc sống hiện đại — nơi họ tìm thấy sự đồng điệu, niềm vui nhỏ bé và cảm giác thuộc về cộng đồng. Tuy nhiên, sự điều độ và nhận thức về sức khỏe vẫn là yếu tố quan trọng nhất.</p>
+
+      <blockquote>
+        “Không quan trọng bạn uống bao nhiêu, mà là bạn có tìm thấy niềm vui thật sự trong mỗi ngụm trà sữa hay không.”<br>
+        — <strong>TS. Nguyễn Dương Nâu</strong>
+      </blockquote>
+
+      <img class="illustration" src="https://images.unsplash.com/photo-1611944212129-29977ae1398c?auto=format&fit=crop&w=1000&q=80" alt="Bạn trẻ cười với ly trà sữa trong tay">
+
+    </article>
+  </main>
+  <footer>
+    © 2025 Viện Tâm lý Thanh niên Việt Nam — Bản quyền thuộc về tác giả.
+  </footer>
+</body>
 </html>
